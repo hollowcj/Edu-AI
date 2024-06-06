@@ -169,8 +169,6 @@ export default function Chat() {
                   <div className="user-profile-page">
                     <div className="user-profile-page-picture"></div>
                     <p>
-                      Name: <b>{owner?.username}</b>
-                      <br></br>
                       E-mail: <b>{session.data?.user?.email}</b>
                     </p>
                   </div>

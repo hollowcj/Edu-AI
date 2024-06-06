@@ -1,9 +1,12 @@
 "use client";
+import Image from "next/image";
 import { MessageInput } from "@/app/api/messages/route";
 import { useAllMessages } from "@/modules/messages/hooks/use-all-messages/use-all-messages";
 import { getMessageById } from "@/modules/messages/lib/get-messages-by-id/get-messages-by-id";
 import { Box, Stack, Link, Button } from "@mui/material";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import "../index.css";
 
 const emptyMessage: MessageInput = {
@@ -18,39 +21,22 @@ export default function HomePage() {
 
   return (
     <Box>
-      <Stack
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(140,45,230,0.7),rgba(140,45,230,0.7)),url('/Background.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "100vh",
-        }}
-      >
-        <div className="logout-chat">
-          <Link href="/auth/logout">
-            <Button className="logout-button">Logout</Button>
-          </Link>
-        </div>
-        <div className="buttons">
-          <Link href="/chat">
-            <Button className="chat-button">Chat</Button>
-          </Link>
+      <body className="dashboard-page">
+        <div className="dashboard-user-settings">
+          <h2 className="dashboard-user-logo"></h2>
+          <div className="user-icon">
+            <FontAwesomeIcon className="user-itself" icon={faUser} />
+          </div>
+          <Link href="">Chat</Link>
+          <Link href="">Music</Link>
+          <div className="gap-filling"></div>
+          <div className="gap-filling"></div>
+          <div className="gap-filling"></div>
+          <div className="gap-filling"></div>
+          <div className="gap-filling"></div>
         </div>
 
-        <Stack
-          style={{
-            backgroundColor: "white",
-            borderRadius: 50,
-            justifyContent: "center",
-            overflowY: "scroll",
-          }}
-          minWidth={600}
-          height={500}
-          margin={5}
-          alignItems={"center"}
-          justifyContent={"center"}
-        >
+        <div className="chatbot">
           {messages.map((n) => (
             <Box key={n.id} width="100%" p={2}>
               <Link
@@ -65,7 +51,7 @@ export default function HomePage() {
               </Link>
             </Box>
           ))}
-        </Stack>
+        </div>
         <Stack
           width={500}
           marginTop={-38}
@@ -119,7 +105,7 @@ export default function HomePage() {
             ></input>
           </form>
         </Stack>
-      </Stack>
+      </body>
     </Box>
   );
 }

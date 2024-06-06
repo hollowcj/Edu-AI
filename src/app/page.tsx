@@ -8,14 +8,15 @@ export default function Home() {
     <body>
       <div className="Top">
         <nav>
-          <Image
-            alt="logo"
-            src="/Untitled.png"
-            width="100"
-            height="61"
-            style={{ marginLeft: 30, marginTop: 10 }}
-          ></Image>
           <div className="links">
+            <div className="mylogo">
+              <Image
+                alt="logo2"
+                src="/logo2.png"
+                width="60"
+                height="55"
+              ></Image>
+            </div>
             <a
               style={{
                 textDecoration: "none",
@@ -64,11 +65,8 @@ export default function Home() {
       <div className="main">
         <main>
           <div className="imagineaplace">
-            <p>IMAGINE A PLACE...</p>
-            <p className="description">
-              ...where you can interact with chatbot to catch up on what you
-              missed in school. A place that makes learning easier.
-            </p>
+            <p>EDU-AI</p>
+            <p className="description">...the future of learning</p>
           </div>
         </main>
       </div>

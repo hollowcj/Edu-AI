@@ -33,18 +33,25 @@ export function LoginForm() {
       justifyContent="center"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(140,45,230,0.7),rgba(140,45,230,0.7)),url('/login.png')",
+          "linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)),url('/login.png')",
       }}
     >
       <form onSubmit={handleSubmit}>
         <Stack
           spacing={5}
-          style={{ backgroundColor: "#fff", padding: 50, borderRadius: 20 }}
+          style={{ backgroundColor: "#0000", padding: 50, borderRadius: 20 }}
         >
-          <Typography variant="h6">Sign in to your account</Typography>
+          <Typography style={{ color: "#fff" }} variant="h6">
+            Sign in to your account
+          </Typography>
           <TextField
             label="E-mail"
-            style={{ width: 220 }}
+            style={{
+              width: 220,
+              color: "#fff",
+              backgroundColor: "#fff",
+              borderRadius: 10,
+            }}
             name="email"
             value={email}
             onChange={(o) => setEmail(o.target.value)}
@@ -52,7 +59,7 @@ export function LoginForm() {
           ></TextField>
           <Button
             type="submit"
-            style={{ backgroundColor: "#000", color: "#fff", borderRadius: 50 }}
+            style={{ backgroundColor: "#fff", color: "#000", borderRadius: 50 }}
           >
             Login
           </Button>

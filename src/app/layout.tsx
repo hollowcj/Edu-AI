@@ -4,9 +4,10 @@ import { type Metadata } from "next";
 export const metadata: Metadata = {
   title: {
     template: "%s - My App",
-    default: "My App",
+    default: "Edu-AI",
   },
-  description: "My app description",
+  description:
+    "Imagine a place where you can interact with a chatbot to catchup on what you missed in school. A place that makes learning easier",
 };
 
 export default function RootLayout({

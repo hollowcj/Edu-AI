@@ -27,8 +27,8 @@ export default function HomePage() {
           <div className="user-icon">
             <FontAwesomeIcon className="user-itself" icon={faUser} />
           </div>
-          <Link href="">Chat</Link>
-          <Link href="">Music</Link>
+          <Link href="../chat">Chat</Link>
+          <Link href="">Other</Link>
           <div className="gap-filling"></div>
           <div className="gap-filling"></div>
           <div className="gap-filling"></div>

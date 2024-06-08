@@ -7,7 +7,8 @@ import { Box, Stack, Link, Button } from "@mui/material";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-import "../index.css";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import "./dashboard.css";
 
 const emptyMessage: MessageInput = {
   content: "",
@@ -16,14 +17,43 @@ export default function HomePage() {
   const [nmessage, setMessage] = useState<MessageInput>(emptyMessage);
   const { data, mutate } = useAllMessages();
   const messages = data || [];
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarVisible(!isSidebarVisible);
+  };
 
   console.log("@@ messages: ", messages);
 
   return (
     <Box>
       <body className="dashboard-page">
-        <div className="dashboard-user-settings">
-          <h2 className="dashboard-user-logo"></h2>
+        {!isSidebarVisible && (
+          <div className="control">
+            <FontAwesomeIcon
+              className="slide"
+              onClick={toggleSidebar}
+              icon={faArrowLeft}
+            />
+          </div>
+        )}
+        <div
+          className={`dashboard-user-settings ${
+            isSidebarVisible ? "open" : "closed"
+          }`}
+        >
+          <FontAwesomeIcon
+            className="slide"
+            onClick={toggleSidebar}
+            icon={faArrowLeft}
+          />
+          <Image
+            draggable="false"
+            alt="logo2"
+            src="/logo2.png"
+            width="45"
+            height="40"
+          ></Image>
           <div className="user-icon">
             <FontAwesomeIcon className="user-itself" icon={faUser} />
           </div>
@@ -35,76 +65,40 @@ export default function HomePage() {
           <div className="gap-filling"></div>
           <div className="gap-filling"></div>
         </div>
-
-        <div className="chatbot">
-          {messages.map((n) => (
-            <Box key={n.id} width="100%" p={2}>
-              <Link
-                href={`/dashboard/message/${n.id}`}
-                onClick={async (e) => {
-                  e.preventDefault();
-                  const result = await getMessageById(n.id);
-                  console.log("@@result ", result);
-                }}
-              >
-                {n.content}
-              </Link>
-            </Box>
-          ))}
-        </div>
-        <Stack
-          width={500}
-          marginTop={-38}
-          style={{
-            height: 2,
-            alignItems: "center",
-            justifyContent: "center",
-            marginLeft: 450,
-            borderRadius: 50,
-          }}
-        >
-          <form
-            style={{
-              position: "relative",
-              width: 500,
-              marginTop: 600,
-              backgroundColor: "silver",
-              borderRadius: 20,
-              alignItems: "center",
-              justifyContent: "center",
-              display: "flex",
-            }}
-            onSubmit={async (e) => {
-              e.preventDefault();
-              const response = await fetch("/api/messages", {
-                method: "POST",
-                body: JSON.stringify(nmessage),
-              });
-              console.log("response: ", response);
-              await mutate();
-            }}
-          >
-            <input
-              onChange={(e) =>
-                setMessage((prev) => ({ ...prev, content: e.target.value }))
-              }
-              type="search"
-              placeholder="search"
-              id="search"
-              name="search"
-              style={{
-                borderRadius: 10,
-                width: "95%",
-                height: 51,
-                border: "none",
-                outline: "none",
-                alignItems: "bottom",
-                justifyContent: "bottom",
-                background: "silver",
+        <div className="display">
+          <div className="chatbot">
+            {messages.map((n) => (
+              <Box key={n.id} width="100%" p={2}>
+                <p>{n.content}</p>
+              </Box>
+            ))}
+            <button onClick={toggleSidebar}>Click</button>
+          </div>
+          <div className="search">
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const response = await fetch("/api/messages", {
+                  method: "POST",
+                  body: JSON.stringify(nmessage),
+                });
+                console.log("response: ", response);
+                await mutate();
               }}
-            ></input>
-          </form>
-        </Stack>
+            >
+              <input
+                className="searchbar"
+                onChange={(e) =>
+                  setMessage((prev) => ({ ...prev, content: e.target.value }))
+                }
+                type="search"
+                placeholder="search"
+                id="search"
+                name="search"
+              ></input>
+            </form>
+          </div>
+        </div>
       </body>
     </Box>
   );

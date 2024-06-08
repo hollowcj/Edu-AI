@@ -17,6 +17,7 @@ import { GetAllMessagesResponse } from "../api/messages/route";
 import { GetAllChatMessagesResponse } from "../api/chat/route";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { useCurrentUser } from "@/modules/user/hook/use-current-user/use-current-user";
 
 interface MessageData {
   message: string;
@@ -41,6 +42,7 @@ export default function Chat() {
   const [username, setUsername] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const generator = `${Math.floor(Math.random() * 10000)}`;
+  const user = useCurrentUser()?.data;
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files.length > 0) {
@@ -168,6 +170,9 @@ export default function Chat() {
                 <div className="user-pages">
                   <div className="user-profile-page">
                     <div className="user-profile-page-picture"></div>
+                    <p>
+                      Username: <b>{user?.username}</b>
+                    </p>
                     <p>
                       E-mail: <b>{session.data?.user?.email}</b>
                     </p>

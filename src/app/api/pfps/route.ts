@@ -24,4 +24,3 @@ async function uploadImage(file: Express.Multer.File) {
 
   return imageUrl;
 }
-

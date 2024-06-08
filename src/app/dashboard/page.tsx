@@ -6,8 +6,14 @@ import { getMessageById } from "@/modules/messages/lib/get-messages-by-id/get-me
 import { Box, Stack, Link, Button } from "@mui/material";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCalculator,
+  faMessage,
+  faMusic,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "./dashboard.css";
 
 const emptyMessage: MessageInput = {
@@ -33,7 +39,7 @@ export default function HomePage() {
             <FontAwesomeIcon
               className="slide"
               onClick={toggleSidebar}
-              icon={faArrowLeft}
+              icon={faBars}
             />
           </div>
         )}
@@ -43,22 +49,34 @@ export default function HomePage() {
           }`}
         >
           <FontAwesomeIcon
-            className="slide"
+            className="arrow"
             onClick={toggleSidebar}
             icon={faArrowLeft}
           />
-          <Image
-            draggable="false"
-            alt="logo2"
-            src="/logo2.png"
-            width="45"
-            height="40"
-          ></Image>
           <div className="user-icon">
             <FontAwesomeIcon className="user-itself" icon={faUser} />
           </div>
-          <Link href="../chat">Chat</Link>
-          <Link href="">Other</Link>
+          <Link href="../chat">
+            <FontAwesomeIcon
+              className="user-itself"
+              onClick={toggleSidebar}
+              icon={faMessage}
+            />
+          </Link>
+          <Link href="">
+            <FontAwesomeIcon
+              className="user-itself"
+              onClick={toggleSidebar}
+              icon={faCalculator}
+            />
+          </Link>
+          <Link href="">
+            <FontAwesomeIcon
+              className="user-itself"
+              onClick={toggleSidebar}
+              icon={faMusic}
+            />
+          </Link>
           <div className="gap-filling"></div>
           <div className="gap-filling"></div>
           <div className="gap-filling"></div>

@@ -8,6 +8,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalculator,
+  faHome,
   faMessage,
   faMusic,
   faUser,
@@ -32,7 +33,7 @@ export default function HomePage() {
   console.log("@@ messages: ", messages);
 
   return (
-    <Box>
+    <Box className="body-box">
       <body className="dashboard-page">
         {!isSidebarVisible && (
           <div className="control">
@@ -84,13 +85,17 @@ export default function HomePage() {
           <div className="gap-filling"></div>
         </div>
         <div className="display">
+          <div className="home-button">
+            <Link href="./">
+              <FontAwesomeIcon className="home" icon={faHome} />
+            </Link>
+          </div>
           <div className="chatbot">
             {messages.map((n) => (
               <Box key={n.id} width="100%" p={2}>
                 <p>{n.content}</p>
               </Box>
             ))}
-            <button onClick={toggleSidebar}>Click</button>
           </div>
           <div className="search">
             <form

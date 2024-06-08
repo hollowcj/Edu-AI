@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 .dashboard-user-settings {
     display: flex;
     flex-direction: column;
@@ -67,6 +72,7 @@
     color: #AA43E9;
     transform: translateY(-2px) scale(1.25);
   }
+
   
   
   
@@ -137,4 +143,25 @@
     left: 0;
     position: fixed;
     margin: 20px 20px 20px;
+  }
+
+  .home-button {
+    display: flex;
+    top: 0;
+    position: fixed;
+    margin: 20px 20px 20px;
+  }
+
+  .home {
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 10px 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .home:hover {
+    color: #AA43E9;
+    transform: translateY(-2px) scale(1.25);
   }

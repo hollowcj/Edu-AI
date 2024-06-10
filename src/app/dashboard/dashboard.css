@@ -11,9 +11,10 @@
     position: fixed;
     border: 2px solid #fff;
     padding: 10px 10px 10px;
-    border-radius: 10px;
     top: 0;
     left: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     height: 100%;
     width: 100px; /* Adjust the width as needed */
     transition: transform 0.3s ease-in-out; /* Smooth transition for opening/closing */
@@ -64,13 +65,14 @@
     padding: 5px 5px 5px;
     border-radius: 50px;
     margin: 30px 10px 30px;
-    transition: color 0.3s ease, transform 0.3s ease;
-    border: 5px solid #fff;
+    border: 2px solid #000000;
+    transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease ;
   }
 
   .arrow:hover {
     color: #AA43E9;
     transform: translateY(-2px) scale(1.25);
+    border: 2px solid #fff;
   }
 
   
@@ -107,13 +109,13 @@
 
   
   .chatbot {
-    border: 50px solid #fff;
+    border: 50px solid #a6a6a6d6;
     top: 0;
     right: 0;
     left: 0 ;
     bottom: 0;
     display: flex;
-    background-color: #000;
+    background-color: #ffffff;
     min-width: 600px;
     min-height: 50vh;
     align-items: center;

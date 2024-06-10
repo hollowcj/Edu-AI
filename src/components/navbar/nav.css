@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  @font-face {
+    font-family: "FrederickatheGreat";
+    src:
+      local("FrederickatheGreat"),
+      url("/fonts/FrederickatheGreat-Regular.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Megrim";
+    src:
+      local("Megrim"),
+      url("/fonts/Megrim-Regular.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Kristi";
+    src:
+      local("Kristi"),
+      url("/fonts/Kristi-Regular.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Anta";
+    src:
+      local("Anta"),
+      url("/fonts/Anta-Regular.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "HappyMonkey";
+    src:
+      local("HappyMonkey"),
+      url("/fonts/HappyMonkey-Regular.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Italianno";
+    src:
+      local("Italianno"),
+      url("/fonts/Italianno-Regular.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "JacquesFrancoisShadow";
+    src:
+      local("JacquesFrancoisShadow"),
+      url("/fonts/JacquesFrancoisShadow-Regular.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Kalam";
+    src:
+      local("Kalam"),
+      url("/fonts/Kalam-Regular.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Kavoon";
+    src:
+      local("Kavoon"),
+      url("/fonts/Kavoon-Regular.ttf") format("truetype");
+  }
+  
+  body {
+    display: block;
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url(/Backgrounds.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .link-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .links a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Kavoon", serif;
+  }
+  
+  .links a::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    display: block;
+    margin: auto;
+    transition: 0.3s;
+  }
+  
+  .links a:hover::after {
+    width: 100%;
+  }
+  
+  /*.login {
+    top: 0;
+    right: 0;
+    margin: 20px 20px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }*/
+  
+ /* .login:hover {
+    background-color: #AA43E9;
+    transform: translateY(-2px) scale(1.25);
+  } */
+
+  @media (max-width: 700px) {
+
+    body {
+      display: block;
+      min-height: 100vh;
+      width: 100%;
+      background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)),
+        url(/Backgrounds.jpg);
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+    }
+    .mylogo {
+      display: none;
+    }
+    .links {
+      display: none;
+    }
+    .login {
+      display: none;
+    }
+  }
+
+  @media (min-width: 701px) {
+    .links {
+      gap: 100px;
+    }
+
+    .link-container {
+      gap: 90px;
+      margin: 30px 0 30px;
+    }
+  }
+
+
+  @media (min-width: 800px) {
+    .links {
+      gap: 100px;
+    }
+
+    .link-container {
+      gap: 90px;
+      margin: 30px 0 30px;
+    }
+  }
+   

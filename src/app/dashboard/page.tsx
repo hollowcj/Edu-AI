@@ -3,7 +3,7 @@ import Image from "next/image";
 import { MessageInput } from "@/app/api/messages/route";
 import { useAllMessages } from "@/modules/messages/hooks/use-all-messages/use-all-messages";
 import { getMessageById } from "@/modules/messages/lib/get-messages-by-id/get-messages-by-id";
-import { Box, Stack, Link, Button } from "@mui/material";
+import { Box, Stack, Link, Button, Typography } from "@mui/material";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -24,7 +24,7 @@ export default function HomePage() {
   const [nmessage, setMessage] = useState<MessageInput>(emptyMessage);
   const { data, mutate } = useAllMessages();
   const messages = data || [];
-  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const [isSidebarVisible, setIsSidebarVisible] = useState(true);
 
   const toggleSidebar = () => {
     setIsSidebarVisible(!isSidebarVisible);
@@ -33,7 +33,20 @@ export default function HomePage() {
   console.log("@@ messages: ", messages);
 
   return (
+    //<div className="gap-filling"></div>//
     <Box className="body-box">
+      <div className="bar">
+        <Typography
+          variant="h4"
+          style={{
+            color: "#fff",
+            textAlign: "center",
+            fontFamily: "Kalam",
+          }}
+        >
+          Dashboard Page
+        </Typography>
+      </div>
       <body className="dashboard-page">
         {!isSidebarVisible && (
           <div className="control">
@@ -54,6 +67,9 @@ export default function HomePage() {
             onClick={toggleSidebar}
             icon={faArrowLeft}
           />
+          <Link href="./">
+            <FontAwesomeIcon className="home" icon={faHome} />
+          </Link>
           <div className="user-icon">
             <FontAwesomeIcon className="user-itself" icon={faUser} />
           </div>
@@ -78,19 +94,9 @@ export default function HomePage() {
               icon={faMusic}
             />
           </Link>
-          <div className="gap-filling"></div>
-          <div className="gap-filling"></div>
-          <div className="gap-filling"></div>
-          <div className="gap-filling"></div>
-          <div className="gap-filling"></div>
         </div>
         <div className="display">
-          <div className="home-button">
-            <Link href="./">
-              <FontAwesomeIcon className="home" icon={faHome} />
-            </Link>
-          </div>
-          <div className="chatbot">
+          <div className={`chatbot ${isSidebarVisible ? "reduced-width" : ""}`}>
             {messages.map((n) => (
               <Box key={n.id} width="100%" p={2}>
                 <p>{n.content}</p>

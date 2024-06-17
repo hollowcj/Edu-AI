@@ -7,63 +7,63 @@
   font-family: "FrederickatheGreat";
   src:
     local("FrederickatheGreat"),
-    url("./fonts/FrederickatheGreat-Regular.ttf") format("truetype");
+    url("/fonts/FrederickatheGreat-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Megrim";
   src:
     local("Megrim"),
-    url("./fonts/Megrim-Regular.ttf") format("truetype");
+    url("/fonts/Megrim-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Kristi";
   src:
     local("Kristi"),
-    url("./fonts/Kristi-Regular.ttf") format("truetype");
+    url("/fonts/Kristi-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Anta";
   src:
     local("Anta"),
-    url("./fonts/Anta-Regular.ttf") format("truetype");
+    url("/fonts/Anta-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "HappyMonkey";
   src:
     local("HappyMonkey"),
-    url("./fonts/HappyMonkey-Regular.ttf") format("truetype");
+    url("/fonts/HappyMonkey-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Italianno";
   src:
     local("Italianno"),
-    url("./fonts/Italianno-Regular.ttf") format("truetype");
+    url("/fonts/Italianno-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "JacquesFrancoisShadow";
   src:
     local("JacquesFrancoisShadow"),
-    url("./fonts/JacquesFrancoisShadow-Regular.ttf") format("truetype");
+    url("/fonts/JacquesFrancoisShadow-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Kalam";
   src:
     local("Kalam"),
-    url("./fonts/Kalam-Regular.ttf") format("truetype");
+    url("/fonts/Kalam-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Kavoon";
   src:
     local("Kavoon"),
-    url("./fonts/Kavoon-Regular.ttf") format("truetype");
+    url("/fonts/Kavoon-Regular.ttf") format("truetype");
 }
 
 

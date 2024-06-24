@@ -8,10 +8,10 @@ export function Navbar() {
       <div className="mylogo">
         <Image
           draggable="false"
-          alt="logo"
-          src="/c.png"
-          width="70"
-          height="70"
+          alt="our logo"
+          src="/cc.png"
+          width="100"
+          height="100"
         ></Image>
       </div>
       <div className="links">

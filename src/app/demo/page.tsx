@@ -29,10 +29,10 @@ export default function Demo() {
       <br />
       <Stack className="holder" id="holder">
         <Stack className="circular">
-          <Typography variant="h2" className="loadText">
+          <CircularProgress color="warning" variant="indeterminate" />
+          <Typography variant="body1" className="loadText">
             Loading...
           </Typography>
-          <CircularProgress color="warning" variant="indeterminate" />
         </Stack>
       </Stack>
     </Box>

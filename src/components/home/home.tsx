@@ -11,8 +11,12 @@ export function Home() {
         </div>
       </main>
       <div className="not-supported">
-        <Typography style={{ color: "#000" }}>
-          Sorry, we don&apos;t support this device
+        <Typography variant="h6" style={{ color: "#000" }}>
+          Sorry, we don&apos;t support this device.
+          <br />
+          <Typography variant="body1">
+            Use a Laptop or a Tablet instead
+          </Typography>
         </Typography>
       </div>
     </div>

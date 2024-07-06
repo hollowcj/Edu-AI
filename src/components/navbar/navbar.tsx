@@ -9,10 +9,10 @@ export function Navbar() {
         <Image
           draggable="false"
           alt="our logo"
-          src="/cc.png"
-          width="100"
+          src="/eduai.png"
+          width="130"
           height="100"
-        ></Image>
+        />
       </div>
       <div className="links">
         <a href={"/support"}>
@@ -33,7 +33,7 @@ export function Navbar() {
             color: "#000",
             transition: "background-color 0.3s ease, transform 0.3s ease",
             ":hover": {
-              bgcolor: "#000",
+              bgcolor: "#704D99",
               color: "#fff",
               transform: "translateY(-2px) scale(1.25)",
             },

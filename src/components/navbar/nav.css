@@ -70,8 +70,7 @@
     display: block;
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url(/Backgrounds.jpg);
+    background-image: linear-gradient(rgba(104, 71, 141, 0.7), rgba(104, 71, 141, 0.7)),  url(/Background.png);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -95,7 +94,7 @@
   
   .links a {
     text-decoration: none;
-    color: #fff;
+    color: #5F388C;
     font-family: "Kavoon", serif;
   }
   
@@ -103,7 +102,7 @@
     content: '';
     width: 0%;
     height: 2px;
-    background: #fff;
+    background: #5F388C;
     display: block;
     margin: auto;
     transition: 0.3s;
@@ -125,6 +124,28 @@
     background-color: #AA43E9;
     transform: translateY(-2px) scale(1.25);
   } */
+
+  .custom-shape-divider-bottom-1719776588 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1719776588 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 100px;
+}
+
+.custom-shape-divider-bottom-1719776588 .shape-fill {
+    fill: #9013FE;
+}
+
 
   @media (max-width: 700px) {
 
@@ -152,7 +173,7 @@
 
   @media (min-width: 701px) {
     .links {
-      gap: 100px;
+      gap: 50px;
     }
 
     .link-container {
@@ -164,7 +185,7 @@
 
   @media (min-width: 800px) {
     .links {
-      gap: 100px;
+      gap: 80px;
     }
 
     .link-container {
@@ -172,4 +193,14 @@
       margin: 30px 0 30px;
     }
   }
-   
+
+  @media (min-width: 900px) {
+    .links {
+      gap: 100px;
+    }
+
+    .link-container {
+      gap: 90px;
+      margin: 10px 0 10px;
+    }
+  }

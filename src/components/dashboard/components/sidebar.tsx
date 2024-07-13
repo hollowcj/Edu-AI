@@ -73,16 +73,13 @@ export default function Bar() {
     //<div className="gap-filling"></div>//
     <Box className="body-box">
       <div className="bar">
-        <Typography
-          variant="h4"
-          style={{
-            color: "#fff",
-            textAlign: "center",
-            fontFamily: "Kalam",
-          }}
-        >
-          {content}
-        </Typography>
+        <Image
+          draggable="false"
+          alt="our logo"
+          src="/eduai.png"
+          width="130"
+          height="100"
+        />
       </div>
       <body className="dashboard-page">
         {!isSidebarVisible && (
@@ -141,9 +138,11 @@ export default function Bar() {
               />
             </Tooltip>
           </Button>
-          <Link href="">
-            <FontAwesomeIcon className="user-itself" icon={faCalculator} />
-          </Link>
+          <Button>
+            <Tooltip title="Calculator" placement="right">
+              <FontAwesomeIcon className="user-itself" icon={faCalculator} />
+            </Tooltip>
+          </Button>
           <Button>
             <Tooltip title="Music" placement="right">
               <FontAwesomeIcon

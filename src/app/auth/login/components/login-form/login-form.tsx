@@ -33,21 +33,28 @@ export function LoginForm() {
       justifyContent="center"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)),url('/login.png')",
+          "linear-gradient(rgba(104, 71, 141,0.9),rgba(104, 71, 141,0.9)),url('/login.png')",
       }}
     >
       <form onSubmit={handleSubmit}>
         <Stack
-          spacing={5}
-          style={{ backgroundColor: "#0000", padding: 50, borderRadius: 20 }}
+          spacing={7}
+          style={{
+            backgroundColor: "#fff",
+            padding: 50,
+            borderRadius: 20,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
         >
-          <Typography style={{ color: "#fff" }} variant="h6">
+          <Typography style={{ color: "#000" }} variant="h5">
             Sign in to your account
           </Typography>
           <TextField
             label="E-mail"
             style={{
-              width: 220,
+              width: 300,
               color: "#fff",
               backgroundColor: "#fff",
               borderRadius: 10,
@@ -59,7 +66,20 @@ export function LoginForm() {
           ></TextField>
           <Button
             type="submit"
-            style={{ backgroundColor: "#fff", color: "#000", borderRadius: 50 }}
+            style={{
+              borderRadius: 50,
+              width: 200,
+            }}
+            sx={{
+              bgcolor: "#000",
+              color: "#fff",
+              transition: "background-color 0.3s ease, transform 0.3s ease",
+              ":hover": {
+                bgcolor: "#fff",
+                color: "#000",
+                transform: "translateY(-2px) scale(1.25)",
+              },
+            }}
           >
             Login
           </Button>

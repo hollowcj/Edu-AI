@@ -53,33 +53,33 @@ export default function HomePage() {
               <p>{n.content}</p>
             </Box>
           ))}
-          <div className="search">
-            <form
-              onSubmit={async (e) => {
-                e.preventDefault();
-                const response = await fetch("/api/messages", {
-                  method: "POST",
-                  body: JSON.stringify(nmessage),
-                });
-                console.log("response: ", response);
-                await mutate();
-              }}
-            >
-              <input
-                className="searchbar"
-                onChange={(e) =>
-                  setMessage((prev) => ({
-                    ...prev,
-                    content: e.target.value,
-                  }))
-                }
-                type="search"
-                placeholder="search"
-                id="search"
-                name="search"
-              ></input>
-            </form>
-          </div>
+        </div>
+        <div className="search">
+          <form
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const response = await fetch("/api/messages", {
+                method: "POST",
+                body: JSON.stringify(nmessage),
+              });
+              console.log("response: ", response);
+              await mutate();
+            }}
+          >
+            <input
+              className="searchbar"
+              onChange={(e) =>
+                setMessage((prev) => ({
+                  ...prev,
+                  content: e.target.value,
+                }))
+              }
+              type="search"
+              placeholder="search"
+              id="search"
+              name="search"
+            />
+          </form>
         </div>
       </div>
     </Stack>

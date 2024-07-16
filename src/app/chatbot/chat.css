@@ -168,7 +168,7 @@
       right: 0;
       width: 100%;
       background-color: darkgray;
-      margin: 150px 0 50px;
+      margin: 150px 0 0;
       height: var(--viewport-height);
     }
     
@@ -197,7 +197,7 @@
       height: var(--viewport-height);
       align-items: center;
       justify-content: flex-end;
-      margin: 50px 0 50px;
+      margin: 50px 0 0;
       flex-direction: column;
       overflow-y: auto;
     }
@@ -262,8 +262,6 @@
     .search {
       display: flex;
       flex-direction: row;
-      bottom: 0;
-      margin: 10px 10px 10px;
       padding: 2px 2px 2px;
     }
   

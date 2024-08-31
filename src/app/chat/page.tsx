@@ -41,7 +41,7 @@ export default function Chat() {
   const [profiledata, setProfileData] = useState(false);
   const [username, setUsername] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const generator = `${Math.floor(Math.random() * 10000)}`;
+  // const generator = `${Math.floor(Math.random() * 10000)}`;
   const user = useCurrentUser()?.data;
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {

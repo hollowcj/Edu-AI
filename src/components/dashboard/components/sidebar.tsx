@@ -100,7 +100,7 @@ export default function Bar() {
                   justifyContent: "center",
                   margin: 2,
                   fontSize: 40,
-                  color: "#808080",
+                  color: "#333333",
                 }}
                 src=""
               >

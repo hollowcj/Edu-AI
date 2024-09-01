@@ -94,15 +94,20 @@
   
   .links a {
     text-decoration: none;
-    color: #5F388C;
+    color: #fff;
     font-family: "Kavoon", serif;
+    transition: color 0.3s ease,
+  }
+
+  .links a:hover {
+    color: #68478D;
   }
   
   .links a::after{
     content: '';
     width: 0%;
     height: 2px;
-    background: #5F388C;
+    background: #68478D;
     display: block;
     margin: auto;
     transition: 0.3s;

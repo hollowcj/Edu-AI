@@ -33,7 +33,7 @@ export function Navbar() {
             color: "#000",
             transition: "background-color 0.3s ease, transform 0.3s ease",
             ":hover": {
-              bgcolor: "#704D99",
+              bgcolor: "#68478D",
               color: "#fff",
               transform: "translateY(-2px) scale(1.25)",
             },
